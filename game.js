@@ -277,6 +277,8 @@ function loop(ts) {
     }
   }
   draw();
+  // si el game over ocurrió en este frame, endGame() ya no puede cancelarlo: no reprogramar
+  if (gameOver) return;
   animId = requestAnimationFrame(loop);
 }
 
